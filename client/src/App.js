@@ -1,8 +1,22 @@
 import './App.css';
+import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
+import Inicio from './Components/Views/Inicio/Inicio';
+
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <>
+      <header>
+        <Navbar/>
+      </header>
+      <main>
+        <Inicio/>
+      </main>
+      <footer>
+        <Footer/>
+      </footer>
+    </>
   );
 }
 
