@@ -1,0 +1,19 @@
+{
+  "name": "rockshop",
+  "version": "1.0.0",
+  "description": "Ecommerce Rock Shop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildereduardoleon85/rockshop.git"
+  },
+  "author": "Wilder León",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wildereduardoleon85/rockshop/issues"
+  },
+  "homepage": "https://github.com/Wildereduardoleon85/rockshop#readme"
+}

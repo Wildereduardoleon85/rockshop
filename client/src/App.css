@@ -1,23 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
+body {
+  background-color: var(--light);
 }
 
-:root {
-  --primario: #4e878c;
-  --negro: #232c33;
-  --blanco: #f1f5f2;
+/* Navbar */
+nav .logo {
+  width: 50px;
 }
 
-a {
-  text-decoration: none;
-  color: var(--blanco);
+nav .logo img {
+  width: 100%;
 }
 
-ul {
-  list-style-type: none;
+nav .logo-div p {
+  font-family: "WindSong", cursive;
+}
+
+nav a {
+  color: var(--light700);
+}
+
+nav a:hover {
+  color: var(--light);
+  transition: all 0.3s ease;
 }
