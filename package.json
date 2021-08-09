@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Wildereduardoleon85/rockshop/issues"
   },
-  "homepage": "https://github.com/Wildereduardoleon85/rockshop#readme"
+  "homepage": "https://github.com/Wildereduardoleon85/rockshop#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }

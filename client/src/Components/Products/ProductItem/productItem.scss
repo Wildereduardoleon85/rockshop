@@ -1,0 +1,27 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  .card {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 5px 0px lightgray;
+    overflow: hidden;
+    cursor: pointer;
+    div:first-child {
+      border-bottom: 1px solid lightgrey;
+      padding: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    div:nth-child(2) {
+      padding: 20px;
+      p:nth-child(3) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

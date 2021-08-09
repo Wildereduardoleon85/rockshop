@@ -1,8 +1,9 @@
-import './index.css';
-import './App.css';
-import Navbar from './Components/Navbar';
+/* import './index.css'; */
+import './App.scss';
+import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer';
-import Inicio from './Components/Views/Inicio';
+import Products from './Components/Products/Products';
+import LatestProducts from './Components/LatestProducts/LatestProducts';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Navbar/>
       </header>
       <main>
-        <Inicio/>
+        <LatestProducts/>
+        <Products/>
       </main>
       <footer>
         <Footer/>

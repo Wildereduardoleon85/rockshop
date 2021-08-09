@@ -1,0 +1,44 @@
+/* Navbar */
+@import url("https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap");
+
+.navbar {
+  background-color: var(--dark);
+  display: flex;
+  padding: 0 100px;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+    div {
+      width: 60px;
+      padding: 10px 0;
+      img {
+        width: 100%;
+      }
+    }
+    p {
+      font-family: "WindSong", cursive;
+      color: var(--light);
+      margin-left: 20px;
+      margin-right: 20px;
+      font-size: 26px;
+    }
+  }
+  ul {
+    display: flex;
+    margin-left: auto;
+    li {
+      margin-left: 20px;
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+  a {
+    color: var(--light700);
+  }
+  a:hover {
+    color: var(--light);
+    transition: all 0.3s ease;
+  }
+}
