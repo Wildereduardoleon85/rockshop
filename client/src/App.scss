@@ -47,6 +47,7 @@ input:focus {
 
 img {
   vertical-align: bottom;
+  width: 100%;
 }
 
 .btn-primary {
@@ -64,4 +65,11 @@ img {
   background-color: var(--primary600);
   transition: all 0.5s ease;
   box-shadow: 1px 1.5px 3px 0 var(--dark);
+}
+
+.card {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px lightgray;
+  overflow: hidden;
 }

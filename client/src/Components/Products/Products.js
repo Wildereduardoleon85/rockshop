@@ -1,14 +1,24 @@
 import React from 'react';
-import productos from '../../data/productos';
-import ProductItem from './ProductItem/ProductItem';
+import { Link } from 'react-router-dom';
+import './products.scss';
+import Rating from '../Rating/Rating';
+import {formatter} from '../../helpers/helpers';
 
-const Products = () => {
+const Products = ({product}) => {
+    const {_id, imagen, nombre, comentarios, precio, rating} = product
     return (
-        <section className="products">
-            {productos.map(product=>(
-                <ProductItem key={product._id} product={product}/>
-            ))}
-        </section>
+        <div className="card">
+            <Link to={`/product/${_id}`}>
+                <img src={`/img/${imagen}`} alt={imagen} />
+            </Link>
+            <div>
+                <Link to={`/product/${_id}`}>{nombre}</Link>
+                <Rating comentarios={comentarios} rating={rating}/>
+                <Link to={`/product/${_id}`}>
+                    <strong>$ {formatter(precio)}</strong>
+                </Link>
+            </div>
+        </div>
     )
 }
 

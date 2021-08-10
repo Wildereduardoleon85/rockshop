@@ -7,18 +7,11 @@
   a {
     color: black;
   }
-  .card {
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 2px 2px 5px 0px lightgray;
-    overflow: hidden;
+  > div {
     > a {
       border-bottom: 1px solid lightgrey;
       padding: 20px;
       display: block;
-      img {
-        width: 100%;
-      }
     }
     > div:nth-child(2) {
       padding: 20px;
