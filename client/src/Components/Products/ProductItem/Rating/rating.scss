@@ -1,9 +1,11 @@
 .rating {
-  div {
-    display: flex;
-    margin: 20px 0;
-    i {
-      color: var(--gold);
-    }
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+  i {
+    color: var(--gold);
+  }
+  p {
+    margin-left: 10px;
   }
 }

@@ -4,7 +4,6 @@ import './rating.scss';
 const Rating = ({comentarios, rating}) => {
     return (
         <div className="rating">
-            <div>
                 <i 
                     className={ 
                         rating >= 1 ? "fas fa-star" : 
@@ -45,8 +44,7 @@ const Rating = ({comentarios, rating}) => {
                     }
                 >
                 </i>
-            </div>
-            <p>
+                <p>
                 {comentarios} comentarios
             </p>
         </div>
