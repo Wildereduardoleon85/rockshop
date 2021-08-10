@@ -8,7 +8,7 @@ const productos = [
         categoria: 'Guitarras',
         precio: 359991,
         enStock: 3,
-        rating: 4.5,
+        rating: 4.8,
         comentarios: 3
     },
     {
@@ -20,7 +20,7 @@ const productos = [
         categoria: 'Percusión',
         precio: 999990,
         enStock: 2,
-        rating: 4.8,
+        rating: 5,
         comentarios: 5
     },
     {
@@ -32,7 +32,7 @@ const productos = [
         categoria: 'Amplificadores',
         precio: 409990,
         enStock: 1,
-        rating: 4.3,
+        rating: 4,
         comentarios: 8
     },
     {
@@ -44,7 +44,7 @@ const productos = [
         categoria: 'Bajos',
         precio: 299900,
         enStock: 2,
-        rating: 4.9,
+        rating: 3.2,
         comentarios: 0
     },
     {
@@ -56,7 +56,7 @@ const productos = [
         categoria: 'Micrófonos',
         precio: 209900,
         enStock: 5,
-        rating: 5,
+        rating: 3.8,
         comentarios: 10
     },
     {
@@ -68,7 +68,7 @@ const productos = [
         categoria: 'Pedales',
         precio: 189990,
         enStock: 2,
-        rating: 4.5,
+        rating: 4.7,
         comentarios: 4
     }
 ]

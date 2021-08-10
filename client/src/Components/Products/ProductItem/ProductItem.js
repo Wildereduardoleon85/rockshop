@@ -1,17 +1,21 @@
 import React from 'react';
 import './productItem.scss';
-import {formatter} from '../../../helpers/helpers'
+import Rating from './Rating/Rating';
+import {formatter} from '../../../helpers/helpers';
 
 const ProductItem = ({product}) => {
+    const {_id, imagen, nombre, comentarios, precio, rating} = product
     return (
-        <div className="card" key={product._id}>
+        <div  className="card">
+            <a href={`/product/${_id}`}>
+                <img src={`./img/${imagen}`} alt={imagen} />
+            </a>
             <div>
-                <img src={`./img/${product.imagen}`} alt={product.imagen} />
-            </div>
-            <div>
-                <h3>{product.nombre}</h3>
-                <p>{product.comentarios}</p>
-                <p><strong>$ {formatter(product.precio)}</strong></p>
+                <a href={`/product/${_id}`}>{nombre}</a>
+                <Rating comentarios={comentarios} rating={rating}/>
+                <a href={`/product/${_id}`}>
+                    <strong>$ {formatter(precio)}</strong>
+                </a>
             </div>
         </div>
     )

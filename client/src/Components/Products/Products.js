@@ -6,7 +6,7 @@ const Products = () => {
     return (
         <section className="products">
             {productos.map(product=>(
-                <ProductItem product={product}/>
+                <ProductItem key={product._id} product={product}/>
             ))}
         </section>
     )

@@ -9,6 +9,7 @@
 
 body {
   background-color: var(--light);
+  font-size: 16px;
 }
 
 :root {
@@ -23,6 +24,7 @@ body {
   --light: #f1f5f2;
   --light600: #d8dcd9;
   --light700: #c0c4c1;
+  --gold: rgb(192, 152, 44);
 }
 
 a {

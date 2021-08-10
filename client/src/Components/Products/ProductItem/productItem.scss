@@ -4,22 +4,35 @@
   grid-gap: 20px;
   width: 1200px;
   margin: 0 auto;
+  a {
+    color: black;
+  }
   .card {
     border-radius: 10px;
     background-color: white;
     box-shadow: 2px 2px 5px 0px lightgray;
     overflow: hidden;
-    cursor: pointer;
-    div:first-child {
+    > a {
       border-bottom: 1px solid lightgrey;
       padding: 20px;
+      display: block;
       img {
         width: 100%;
       }
     }
-    div:nth-child(2) {
+    > div:nth-child(2) {
       padding: 20px;
       p:nth-child(3) {
+        font-size: 1.5rem;
+      }
+      a:first-child {
+        font-size: 1.2rem;
+      }
+      a:first-child:hover {
+        color: var(--primary);
+        transition: all 0.3s ease;
+      }
+      a:last-child {
         font-size: 1.5rem;
       }
     }
