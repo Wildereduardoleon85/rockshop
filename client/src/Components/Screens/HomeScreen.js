@@ -1,21 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Products from '../Products/Products';
+import { listProducts } from '../../actions/productActions';
 
 const Home = () => {
-    const [products, setProducts] = useState(null)
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        getProducts()
-        // eslint-disable-next-line
-    }, [])
-
-    const getProducts = async() => {
-        const {data} = await axios.get('/api/v1/products');
-        setProducts(data);
-    }
+    const productList = useSelector(state => state.productList)
+    const {loading, error, products} = productList
     
-    if(products === null){
+    useEffect(() => {
+        dispatch(listProducts())
+        // eslint-disable-next-line
+    }, [dispatch])
+
+    if(loading && products.length < 1){
         return <h1>Loading...</h1>
     }else{
         return (

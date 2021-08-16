@@ -14,8 +14,8 @@ const ProductScreen = ({match}) => {
     }, [])
 
     const getProduct = async() => {
-        const {data} = await axios.get(`/api/v1/product/${match.params.id}`);
-        setProduct(data[0]);
+        const {data} = await axios.get(`/api/v1/products/${match.params.id}`);
+        setProduct(data);
     }
 
     if(product === null){

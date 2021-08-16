@@ -42,4 +42,30 @@ router.post('/', async(req, res)=>{
     } 
 });
 
+
+// @route GET /api/v1/products
+// @desc get all products
+router.get('/', async(req, res)=>{
+    try {
+        const products = await Product.find();
+        res.json(products);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json({message: 'Server Error'});
+    }
+});
+
+// @route   GET /api/v1/products/:id
+// @desc    Get single Product
+router.get('/:id', async(req, res)=>{
+    try {
+        const product = await Product.findById(req.params.id);
+        res.json(product);
+    } catch (err) {
+        console.error(err.message);
+        res.status(404).json({message: 'Prdoduct Not Found'});
+    }
+});
+
+
 export default router;
