@@ -3,6 +3,7 @@ import axios from 'axios';
 import Rating from '../../Rating/Rating';
 import './product-screen.scss';
 import {formatter} from '../../../helpers/helpers';
+import Loader from '../Loader/Loader';
 
 const ProductScreen = ({match}) => {
 
@@ -19,7 +20,7 @@ const ProductScreen = ({match}) => {
     }
 
     if(product === null){
-        return <h1>Loading...</h1>
+        return <Loader/>
     }else{
         const {imagen, nombre, comentarios, rating, precio, descripcion, enStock} = product
         return (

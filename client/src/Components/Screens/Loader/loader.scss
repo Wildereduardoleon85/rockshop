@@ -1,0 +1,31 @@
+.loader {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: fit-content;
+  > div {
+    background-color: var(--primary);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    animation: 1.2s bounce infinite ease-in-out both;
+  }
+  > div:nth-child(1) {
+    animation-delay: -0.3s;
+  }
+  > div:nth-child(2) {
+    animation-delay: -0.15s;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
