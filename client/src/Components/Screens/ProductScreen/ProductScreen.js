@@ -1,25 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../../Rating/Rating';
 import './product-screen.scss';
 import {formatter} from '../../../helpers/helpers';
 import Loader from '../Loader/Loader';
+import { getProductDetails } from '../../../actions/productActions';
 
 const ProductScreen = ({match}) => {
+    const dispatch = useDispatch()
 
-    const [product, setProduct] = useState(null)
+    const productDetails = useSelector(state => state.productDetails)
+    const {loading, product} = productDetails
 
     useEffect(() => {
-        getProduct()
-        // eslint-disable-next-line
-    }, [])
+        dispatch(getProductDetails(match.params.id))
+    }, [match, dispatch])
 
-    const getProduct = async() => {
-        const {data} = await axios.get(`/api/v1/products/${match.params.id}`);
-        setProduct(data);
-    }
-
-    if(product === null){
+    if(loading){
         return <Loader/>
     }else{
         const {imagen, nombre, comentarios, rating, precio, descripcion, enStock} = product
