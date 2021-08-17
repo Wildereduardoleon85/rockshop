@@ -8,7 +8,7 @@ import Loader from '../layout/Loader/Loader';
 import { getProductDetails } from '../../redux/actions/productActions';
 
 const ProductScreen = ({match}) => {
-    const [qty, setQty] = useState(0)
+    const [qty, setQty] = useState(1)
 
     const dispatch = useDispatch()
 
@@ -22,7 +22,7 @@ const ProductScreen = ({match}) => {
     if(loading || product.length < 1){
         return <Loader/>
     }else{
-        const {imagen, nombre, comentarios, rating, precio, descripcion, enStock} = product
+        const {imagen, nombre, comentarios, rating, precio, descripcion, enStock, _id} = product
         return (
             <>
                 <Link to="/" ><button>Atrás</button></Link>
@@ -37,7 +37,6 @@ const ProductScreen = ({match}) => {
                         <p>{descripcion}</p>
                     </div>
                     <div>
-                        
                         <p>Precio: $ {formatter(precio)}</p>
                         <p>Stock: {enStock > 0 ? 'Disponible' : 'No Disponible'}</p>
                         {enStock > 0 && (
@@ -51,7 +50,14 @@ const ProductScreen = ({match}) => {
                                 <i className="fas fa-caret-down"></i>
                         </div>
                         )}
-                        <button className={enStock > 0 ? 'btn-primary' : 'btn-disabled'} >Agregar al Carro</button>
+                        <Link to={`/cart/${_id}?qty=${qty}`}>
+                            <button 
+                                className={enStock > 0 ? 'btn-primary' : 'btn-disabled'} 
+                                disabled={enStock > 0 ? false : true}
+                            >
+                                Agregar al Carro
+                            </button>
+                        </Link>
                     </div>
                 </section>
             </>
