@@ -61,6 +61,17 @@ img {
   box-shadow: 0.5px 1px 3px 0 var(--dark);
 }
 
+.btn-disabled {
+  border: none;
+  background-color: var(--light);
+  outline: none;
+  padding: 5px 15px;
+  color: var(--light700);
+  font-weight: 200;
+  cursor: not-allowed;
+  box-shadow: 0.5px 1px 3px 0 var(--dark);
+}
+
 .btn-primary:hover {
   background-color: var(--primary600);
   transition: all 0.5s ease;

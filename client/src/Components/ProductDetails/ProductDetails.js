@@ -1,13 +1,15 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Rating from '../Rating/Rating';
 import './product-details.scss';
 import {formatter} from '../../helpers/helpers';
 import Loader from '../layout/Loader/Loader';
-import { getProductDetails } from '../../actions/productActions';
+import { getProductDetails } from '../../redux/actions/productActions';
 
 const ProductScreen = ({match}) => {
+    const [qty, setQty] = useState(0)
+
     const dispatch = useDispatch()
 
     const productDetails = useSelector(state => state.productDetails)
@@ -24,7 +26,7 @@ const ProductScreen = ({match}) => {
         return (
             <>
                 <Link to="/" ><button>Atrás</button></Link>
-                <section className="product-screen card">
+                <section className="product-details card">
                     <div>
                         {<img src={`/img/${imagen}`} alt={imagen} />}
                     </div>
@@ -35,10 +37,21 @@ const ProductScreen = ({match}) => {
                         <p>{descripcion}</p>
                     </div>
                     <div>
+                        
                         <p>Precio: $ {formatter(precio)}</p>
                         <p>Stock: {enStock > 0 ? 'Disponible' : 'No Disponible'}</p>
-                        <p>Cantidad: </p>
-                        <button className="btn-primary">Agregar al Carro</button>
+                        {enStock > 0 && (
+                        <div>
+                            <p>Cantidad: </p>
+                                <select value={qty} onChange={(e)=> setQty(e.target.value)}>
+                                {[...Array(enStock).keys()].map(x=> (
+                                    <option key={x+1} vlaue={x+1}>{x+1}</option>
+                                ))}
+                                </select>
+                                <i className="fas fa-caret-down"></i>
+                        </div>
+                        )}
+                        <button className={enStock > 0 ? 'btn-primary' : 'btn-disabled'} >Agregar al Carro</button>
                     </div>
                 </section>
             </>
