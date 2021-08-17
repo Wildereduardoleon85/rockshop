@@ -19,7 +19,7 @@ export const productListReducer = (state = {products: [] }, action) => {
 export const productDetailsReducer = (state = {product: { comentarios: [] } }, action) => {
     switch(action.type){
         case PRODUCT_DETAILS_REQUEST:
-            return {loading: true, ...state }
+            return {loading: true, product: { comentarios: [] } }
         case PRODUCT_DETAILS_SUCCESS:
             return {loading: false, product: action.payload}
         default:

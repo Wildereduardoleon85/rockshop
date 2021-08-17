@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer';
-import HomeScreen from './Components/Screens/HomeScreen';
-import ProductScreen from './Components/Screens/ProductScreen/ProductScreen';
+import Navbar from './Components/layout/Navbar/Navbar';
+import Footer from './Components/layout/Footer';
+import Home from './Components/Home';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 import LatestProducts from './Components/LatestProducts/LatestProducts';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       </header>
       <main>
         <LatestProducts/>
-        <Route path="/" component={HomeScreen} exact />
-        <Route path="/product/:id" component={ProductScreen} />
+        <Route path="/" component={Home} exact />
+        <Route path="/product/:id" component={ProductDetails} />
       </main>
       <footer>
         <Footer/>
