@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './cart.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../redux/actions/cartActions'; 
+import { addToCart, removeFromCart } from '../../redux/actions/cartActions'; 
 import {formatter} from '../../helpers/helpers';
 
 const Cart = ({match, location, history}) => {
@@ -21,8 +21,8 @@ const Cart = ({match, location, history}) => {
         }
     }, [productId, qty, dispatch])
 
-    const removeFromCart = () => {
-        console.log('remove')
+    const removeFromCartHandler = (e) => {
+        dispatch(removeFromCart(e.target.id))
     }
 
     const checkOutHandler = () => {
@@ -61,9 +61,9 @@ const Cart = ({match, location, history}) => {
                                             <option key={x+1} vlaue={x+1}>{x+1}</option>
                                         ))}
                                     </select>
-                                    <i onClick={ () => removeFromCart(item.product) } className="fas fa-caret-down"></i>
+                                    <i className="fas fa-caret-down"></i>
                                 </div>
-                                <i className="fas fa-trash"></i>
+                                <i id={item.product} onClick={ removeFromCartHandler } className="fas fa-trash"></i>
                             </div>
                         </div>
                     ))}
