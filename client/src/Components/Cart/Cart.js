@@ -25,34 +25,69 @@ const Cart = ({match, location, history}) => {
         console.log('remove')
     }
 
+    const checkOutHandler = () => {
+        history.push('login?redirect=shipping')
+    }
+
     return (
         <div className="cart card">
             <h1>Carrito 
                 <span> ({cartItems.reduce((acc, item)=> acc + item.qty, 0)} Productos)</span>
             </h1>
-            {cartItems.map(item=>(
-                <div key={item.product}>
-                    <div>
-                        <img src={`/img/${item.imagen}`} alt={item.nombre} />
-                    </div>
-                    <Link to={`/product/${item.product}`}><p>{item.nombre}</p></Link>
-                    <p>$ {formatter(item.precio)}</p>
-                    <div>
-                        <div className="input-select">
-                            <select 
-                                value={item.qty} 
-                                onChange={(e)=> dispatch(addToCart(item.product, Number(e.target.value)))}
-                            >
-                                {[...Array(item.enStock).keys()].map(x=> (
-                                    <option key={x+1} vlaue={x+1}>{x+1}</option>
-                                ))}
-                            </select>
-                            <i onClick={ () => removeFromCart(item.product) } className="fas fa-caret-down"></i>
+            <div className="cart-container">
+                <div className="cart-left">
+                    {cartItems.length === 0 ? (
+                        <div>
+                            <h1>Tu Carro está vacío...</h1>
+                            <div className="empty-cart">
+                                <img src="/img/carroVacio.png" alt="Carro Vacío" />
+                            </div>
                         </div>
-                        <i class="fas fa-trash"></i>
-                    </div>
+                        ) : 
+                    cartItems.map(item=>(
+                        <div className="cart-item" key={item.product}>
+                            <div>
+                                <img src={`/img/${item.imagen}`} alt={item.nombre} />
+                            </div>
+                            <Link to={`/product/${item.product}`}><p>{item.nombre}</p></Link>
+                            <p>$ {formatter(item.precio)}</p>
+                            <div>
+                                <div className="input-select">
+                                    <select 
+                                        value={item.qty} 
+                                        onChange={(e)=> dispatch(addToCart(item.product, Number(e.target.value)))}
+                                    >
+                                        {[...Array(item.enStock).keys()].map(x=> (
+                                            <option key={x+1} vlaue={x+1}>{x+1}</option>
+                                        ))}
+                                    </select>
+                                    <i onClick={ () => removeFromCart(item.product) } className="fas fa-caret-down"></i>
+                                </div>
+                                <i className="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
+                <div className="cart-right">
+                    <h3>Resumen de compra</h3>
+                    <div>
+                        <h3>Total:</h3>
+                        <p>
+                            <strong>
+                                $ {formatter(cartItems.reduce((acc, item)=> acc + (item.qty * item.precio), 0))}
+                            </strong>
+                        </p>
+                    </div>
+                    <button 
+                        className={cartItems.length === 0 ? 'btn-disabled' : 'btn-primary'} 
+                        disabled={cartItems.length === 0}
+                        onClick={checkOutHandler}
+                    >
+                        Continuar Compra
+                    </button>
+                </div>
+            </div>
+        
         </div>
     )
 }
