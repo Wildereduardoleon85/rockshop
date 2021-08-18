@@ -40,14 +40,14 @@ const ProductScreen = ({match}) => {
                         <p>Precio: $ {formatter(precio)}</p>
                         <p>Stock: {enStock > 0 ? 'Disponible' : 'No Disponible'}</p>
                         {enStock > 0 && (
-                        <div>
+                        <div className="input-select">
                             <p>Cantidad: </p>
-                                <select value={qty} onChange={(e)=> setQty(e.target.value)}>
-                                {[...Array(enStock).keys()].map(x=> (
-                                    <option key={x+1} vlaue={x+1}>{x+1}</option>
-                                ))}
-                                </select>
-                                <i className="fas fa-caret-down"></i>
+                            <select value={qty} onChange={(e)=> setQty(e.target.value)}>
+                            {[...Array(enStock).keys()].map(x=> (
+                                <option key={x+1} vlaue={x+1}>{x+1}</option>
+                            ))}
+                            </select>
+                            <i className="fas fa-caret-down"></i>
                         </div>
                         )}
                         <Link to={`/cart/${_id}?qty=${qty}`}>

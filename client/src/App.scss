@@ -79,8 +79,31 @@ img {
 }
 
 .card {
-  border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 5px 0px lightgray;
   overflow: hidden;
+}
+
+.input-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  select {
+    width: calc(80rem / 16);
+    padding: calc(3rem / 16) calc(25rem / 16) calc(3rem / 16) calc(20rem / 16);
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: var(--light);
+  }
+  i {
+    position: absolute;
+    right: 20px;
+    pointer-events: none;
+    color: var(--primary);
+    font-size: 1.3rem;
+  }
 }

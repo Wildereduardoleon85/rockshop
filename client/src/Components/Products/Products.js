@@ -4,6 +4,7 @@ import './products.scss';
 import Rating from '../Rating/Rating';
 import {formatter} from '../../helpers/helpers';
 
+
 const Products = ({product}) => {
     const {_id, imagen, nombre, comentarios, precio, rating} = product
     return (

@@ -15,7 +15,7 @@ const Navbar = () => {
             <SearchForm/>            
             <ul>
                 <li>
-                    <Link to="/"><i className="fas fa-shopping-cart"></i>Carrito</Link>
+                    <Link to="/cart"><i className="fas fa-shopping-cart"></i>Carrito</Link>
                 </li>
                 <li>
                     <Link to="#!"><i className="fas fa-user"></i>Iniciar Sesión</Link>

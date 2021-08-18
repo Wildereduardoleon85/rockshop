@@ -15,7 +15,7 @@ function App() {
         <Navbar/>
       </header>
       <main>
-        <LatestProducts/>
+        {/* <LatestProducts/> */}
         <Route path="/" component={Home} exact />
         <Route path="/product/:id" component={ProductDetails} />
         <Route path="/cart/:id?" component={Cart} />

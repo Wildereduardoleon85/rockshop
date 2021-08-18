@@ -2,6 +2,7 @@
   width: 1200px;
   margin: 0 auto;
   display: flex;
+  margin-top: 100px;
   > div:first-child {
     width: 40%;
     padding: 20px;
@@ -26,6 +27,16 @@
   > div:nth-child(3) {
     width: 20%;
     padding: 30px;
+    > div {
+      display: flex;
+      flex-direction: row;
+      border: none;
+      align-items: center;
+      border-bottom: 1px solid lightgray;
+      > p {
+        border: none;
+      }
+    }
     p {
       border-bottom: 1px solid lightgray;
       padding: 10px 0;
@@ -33,36 +44,6 @@
     button {
       width: 100%;
       margin-top: 20px;
-    }
-    > div {
-      display: flex;
-      flex-direction: row;
-      border: none;
-      align-items: center;
-      border-bottom: 1px solid lightgray;
-      position: relative;
-      select {
-        width: calc(80rem / 16);
-        padding: calc(3rem / 16) calc(25rem / 16) calc(3rem / 16)
-          calc(20rem / 16);
-        margin: 0 auto;
-        border: none;
-        outline: none;
-        appearance: none;
-        cursor: pointer;
-        font-size: 1rem;
-        background-color: var(--light);
-      }
-      > p {
-        border: none;
-      }
-      i {
-        position: absolute;
-        right: 20px;
-        pointer-events: none;
-        color: var(--primary);
-        font-size: 1.3rem;
-      }
     }
   }
 }
