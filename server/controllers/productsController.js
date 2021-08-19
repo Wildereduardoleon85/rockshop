@@ -33,9 +33,9 @@ export const productRegister = async(req, res) => {
 
         const product = await newProduct.save();
         res.json(product);
-    }catch(err){
-        console.error(err.message);
-        res.status(500).send('Server Error');
+    }catch(error){
+        console.error(error.message);
+        res.status(500).json({message: 'Server Error'});
     } 
 };
 
@@ -57,8 +57,8 @@ export const getProductById = async(req, res)=> {
     try {
         const product = await Product.findById(req.params.id);
         res.json(product);
-    } catch (err) {
-        console.error(err.message);
+    } catch (error) {
+        console.error(error.message);
         res.status(404).json({message: 'Prdoduct Not Found'});
     }
 }
